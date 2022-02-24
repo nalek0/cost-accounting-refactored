@@ -1,0 +1,38 @@
+form.check-form {
+    input.text-input {
+        width: 100%;
+        font-size: 1em;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--page-block-background-color);
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+        padding: .15em;
+
+        &::placeholder {
+            color: var(--text-color);
+            padding: .2em;
+        }
+    }
+
+    input.submit {
+        font-size: 1em;
+        color: var(--text-color);
+        background-color: var(--accent-color);
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border: none;
+        outline: none;
+        border-radius: 0.3em;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+        &:active {
+            filter: brightness(0.8);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<#--
+This pattern requires:
+
+makePopup: Boolean
+popupText: String
+-->
+
+<#if makePopup?? && makePopup && popupText??>
+    <script type="text/javascript"> littlePopup("${popupText}"); </script>
+</#if>

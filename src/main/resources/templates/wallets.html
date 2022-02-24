@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ваши кошельки</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/form.css">
+    <link rel="stylesheet" href="/static/css/wallets.css">
+
+    <script type="text/javascript" src="/static/js/custom-form.js"></script>
+    <script type="text/javascript" src="/static/js/popups.js"></script>
+    <script type="text/javascript" src="/static/js/get_mobile_os.js"></script>
+</head>
+<body>
+    <#include "/patterns/nav_pattern.html">
+
+    <article class="with-nav">
+        <section class="page-block history">
+            <div class="header"> Кошельки </div>
+            <div class="page-subblock content">
+                <#if 0 == clientUser.wallets?size>
+                    <i>Нет кошельков, создайте новый!</i>
+                <#else>
+                    <#list clientUser.wallets as wallet>
+                        <div class="wallet">
+                            <a class="name text-link" href="${wallet.walletURL}">${wallet.name}</a>
+                            <#if 0 <= wallet.totalAmount>
+                                <span class="amount more-zero">${wallet.totalAmount}${wallet.amountCurrency}</span>
+                            <#else>
+                                <span class="amount less-zero">${wallet.totalAmount}${wallet.amountCurrency}</span>
+                            </#if>
+                        </div>
+                    </#list>
+                </#if>
+            </div>
+        </section>
+
+        <section class="add-wallet">
+            <form action="/wallet-add" method="post" class="check-form">
+                <input type="text" name="name" class="text-input" placeholder="Введите имя для кошелька" maxlength="50" required>
+                <input type="submit" value="Создать">
+            </form>
+        </section>
+    </article>
+
+    <#include "/patterns/make_popup.html">
+</body>
+</html>

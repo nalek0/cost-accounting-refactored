@@ -1,0 +1,69 @@
+:root {
+  --background-color: #ffffff;
+  --page-block-background-color: #c5c5ff;
+  --page-block-border-color: #7723f9;
+  --text-color: #000000;
+  --link-color: #4400ff;
+  --link-hover-color: #aa00ff;
+  --accent-color: #c5dcff; }
+
+body {
+  --default-font-size: 20px; }
+
+body.mobile {
+  --default-font-size: 40px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--default-font-size); }
+
+.text-link {
+  color: var(--link-color);
+  text-decoration: none;
+  outline: none; }
+  .text-link:hover, .text-link:active {
+    color: var(--link-hover-color);
+    text-decoration: underline; }
+
+.page-block {
+  display: block;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: 0.1em solid var(--page-block-border-color);
+  border-top: 0.5em solid var(--page-block-border-color);
+  background-color: var(--page-block-background-color); }
+  .page-block .header {
+    font-size: 1.2em;
+    display: inline;
+    border-bottom: 0.05em solid var(--page-block-border-color); }
+  .page-block .content {
+    margin-left: 0.3em;
+    margin-top: 0.4em; }
+
+body:not(.mobile) {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.page-subblock {
+  display: block;
+  margin: 0.2em;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  border: 0.1em solid var(--page-block-border-color);
+  border-left: 0.2em solid var(--page-block-border-color); }
+
+.amount {
+  display: inline-block;
+  padding: .1em .2em .1em .2em;
+  background-color: var(--accent-color); }
+  .amount.more-zero {
+    color: green; }
+  .amount.less-zero {
+    color: red; }
+
+/*# sourceMappingURL=base.css.map */

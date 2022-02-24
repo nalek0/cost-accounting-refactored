@@ -1,0 +1,49 @@
+.wallet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  .wallet:not(:last-child) {
+    margin-bottom: 0.3em; }
+    .wallet:not(:last-child):after {
+      content: " ";
+      background: var(--accent-color);
+      position: absolute;
+      left: 20%;
+      right: 20%;
+      bottom: -0.2em;
+      height: 0.1em; }
+
+section.add-wallet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  section.add-wallet form {
+    height: 2.5em;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    section.add-wallet form input {
+      margin-left: 0.25em;
+      margin-top: 0.25em;
+      margin-bottom: 0.25em; }
+      section.add-wallet form input:not(:last-child) {
+        margin-right: 0.5em; }
+    section.add-wallet form input[name=name] {
+      display: inline-block;
+      width: 100%;
+      height: 100%; }
+    section.add-wallet form input[type=submit] {
+      display: inline-block;
+      outline: none;
+      border: none;
+      border-radius: 1em;
+      background-color: var(--page-block-background-color);
+      font-size: 1em;
+      color: var(--text-color);
+      padding: .3em .6em;
+      cursor: pointer; }
+
+/*# sourceMappingURL=wallets.css.map */

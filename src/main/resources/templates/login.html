@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/form.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+
+    <script type="text/javascript" src="/static/js/custom-form.js"></script>
+    <script type="text/javascript" src="/static/js/popups.js"></script>
+    <script type="text/javascript" src="/static/js/get_mobile_os.js"></script>
+</head>
+<body>
+    <article>
+        <section class="signup page-block">
+            <form class="login-form check-form"
+                    action="/process-login"
+                    method="post">
+                <div class="header">Вход:</div>
+                <input name="nickname" class="nickname text-input" type="text" placeholder="nickname" maxlength="20" required>
+                <input name="password" class="password text-input" type="password" placeholder="password" maxlength="20" required>
+                <input class="submit" type="submit" value="Вход">
+                <a href="/register" class="text-link register-link">У меня нет акка</a>
+            </form>
+        </section>
+    </article>
+
+    <#include "/patterns/make_popup.html">
+</body>
+</html>

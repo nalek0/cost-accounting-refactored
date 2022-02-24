@@ -1,0 +1,13 @@
+<#--
+This pattern requires:
+
+clientUser: User
+-->
+
+<link rel="stylesheet" href="/static/css/nav.css">
+<nav>
+    <a class="avatar"
+       href="${clientUser.profileURL}"
+       title="${clientUser.nickname}"
+       style="background-image: url(${clientUser.avatarURL});"></a>
+</nav>

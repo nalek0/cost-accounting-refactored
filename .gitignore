@@ -1,0 +1,25 @@
+.idea/
+.gradle
+**/build/
+!src/**/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# Sass cache
+**/.sass-cache/
+
+# Scripts-helpers
+**/*helper-script.sh
+
+# Sass cache
+**/*.css.map
+
+# Remove database connection config:
+src/main/resources/database-config.json

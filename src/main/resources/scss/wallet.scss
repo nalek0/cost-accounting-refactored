@@ -1,0 +1,153 @@
+.history {
+    .operation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &:not(:last-child) {
+            $delta-line-height: .1em;
+
+            margin-bottom: 3 * $delta-line-height;
+
+            &:after {
+                content: " ";
+                background: var(--accent-color);
+                position: absolute;
+                left: 20%;
+                right: 20%;
+                bottom: -2 * $delta-line-height;
+                height: $delta-line-height;
+            }
+        }
+    }
+
+    .more-operations {
+        text-align: center;
+
+        a  {
+            padding-left: .75em;
+            padding-right: .75em;
+            border-radius: 100em;
+            background: var(--accent-color);
+        }
+    }
+}
+
+.add-operation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    $margin-delta: 0.5em;
+
+    form {
+        height: 2.5em;
+        padding: $margin-delta;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        input {
+            margin-left: 0.25em;
+            margin-top: 0.25em;
+            margin-bottom: 0.25em;
+
+            &:not(:last-child) {
+                margin-right: $margin-delta;
+            }
+        }
+
+        input[name=less-zero] {
+            appearance: none;
+            display: inline-block;
+            position: relative;
+            outline: none;
+            border: none;
+            border-radius: 25%;
+            height: 100%;
+        	aspect-ratio: 1 / 1;
+
+        	$delta: 20%;
+        	$size: 45%;
+
+            &:not(:checked) {
+                // If there is +
+                background-color: #00ff00;
+
+                &::before {
+                    position: absolute;
+                    content: " ";
+                    left: $size;
+                    right: $size;
+                    top: $delta;
+                    bottom: $delta;
+                    background: black;
+
+                    transition: all 0.2s ease-out;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    left: $delta;
+                    right: $delta;
+                    top: $size;
+                    bottom: $size;
+                    background: black;
+                }
+            }
+
+            &:checked {
+                // If there is -
+                background-color: #ff0000;
+
+                &::before {
+                    position: absolute;
+                    content: " ";
+                    left: $size;
+                    right: $size;
+                    top: 50%;
+                    bottom: 50%;
+                    background: black;
+
+                    transition: all 0.2s ease-out;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    left: $delta;
+                    right: $delta;
+                    top: $size;
+                    bottom: $size;
+                    background: black;
+                }
+            }
+        }
+
+
+        input[name=value] {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        input[type=submit] {
+            appearance: none;
+            display: inline-block;
+            outline: none;
+            border: none;
+            border-radius: 25%;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: var(--page-block-background-color);
+            background-image: url(/static/images/right-arrow.png);
+            background-size: 75%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}

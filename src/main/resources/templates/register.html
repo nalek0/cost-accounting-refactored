@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/form.css">
+
+    <script type="text/javascript" src="/static/js/custom-form.js"></script>
+    <script type="text/javascript" src="/static/js/popups.js"></script>
+    <script type="text/javascript" src="/static/js/get_mobile_os.js"></script>
+</head>
+<body>
+    <article>
+        <section class="page-block">
+            <form class="register-form check-form"
+                    action="/process-register"
+                    method="post">
+                <div class="header">Регистрация:</div>
+                <input name="nickname" class="nickname text-input" type="text" placeholder="nickname" maxlength="20">
+                <input name="password" class="password text-input" type="password" placeholder="password" maxlength="20">
+                <input name="password-repeat" class="password text-input" type="password" placeholder="password" maxlength="20">
+                <input class="submit" type="submit" value="Вход">
+            </form>
+        </section>
+    </article>
+
+    <#include "/patterns/make_popup.html">
+</body>
+</html>

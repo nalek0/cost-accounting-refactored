@@ -1,0 +1,28 @@
+$nav-height: 3em;
+$nav-margin: 0.5em;
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--page-block-background-color);
+    border-bottom: 0.2em solid var(--page-block-border-color);
+    height: $nav-height;
+    box-sizing: border-box;
+    padding: 0.2em;
+
+
+    .avatar {
+        display: inline-block;
+        border-radius: 50%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+article {
+    margin-top: $nav-height + $nav-margin;
+}

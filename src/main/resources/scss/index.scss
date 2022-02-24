@@ -1,0 +1,22 @@
+.wallet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &:not(:last-child) {
+        $delta-line-height: .1em;
+
+        margin-bottom: 3 * $delta-line-height;
+
+        &:after {
+            content: " ";
+            background: var(--accent-color);
+            position: absolute;
+            left: 20%;
+            right: 20%;
+            bottom: -2 * $delta-line-height;
+            height: $delta-line-height;
+        }
+    }
+}

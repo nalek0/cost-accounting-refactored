@@ -1,0 +1,17 @@
+.wallet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  .wallet:not(:last-child) {
+    margin-bottom: 0.3em; }
+    .wallet:not(:last-child):after {
+      content: " ";
+      background: var(--accent-color);
+      position: absolute;
+      left: 20%;
+      right: 20%;
+      bottom: -0.2em;
+      height: 0.1em; }
+
+/*# sourceMappingURL=index.css.map */

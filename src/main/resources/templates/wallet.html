@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>История расходов</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/form.css">
+    <link rel="stylesheet" href="/static/css/wallet.css">
+
+    <script type="text/javascript" src="/static/js/custom-form.js"></script>
+    <script type="text/javascript" src="/static/js/popups.js"></script>
+    <script type="text/javascript" src="/static/js/get_mobile_os.js"></script>
+</head>
+<body>
+    <#include "/patterns/nav_pattern.html">
+
+    <article>
+        <section class="page-block history">
+            <div class="header"> История операций </div>
+            <div class="page-subblock content">
+                <#if 0 == wallet.getAllLastOperations()?size>
+                    <i>...Тут пусто...</i>
+                <#else>
+                    <#list wallet.getAllLastOperations() as operation>
+                        <div class="operation">
+                            <i class="amount-time">${operation.stringDate}</i>
+                            <#if 0 <= operation.deltaAmount>
+                                <span class="amount more-zero">${operation.deltaAmount}${wallet.amountCurrency}</span>
+                            <#else>
+                                <span class="amount less-zero">${operation.deltaAmount}${wallet.amountCurrency}</span>
+                            </#if>
+                        </div>
+                    </#list>
+                </#if>
+            </div>
+        </section>
+
+        <section class="add-operation">
+            <form action="/operation-add" method="post" class="check-form">
+                <input type="hidden" name="id" value="${wallet.walletStringId}">
+                <input type="checkbox" name="less-zero">
+                <input type="number" name="value" class="text-input" min="0" max="100000" placeholder="Введите значение" required>
+                <input type="submit" value="">
+            </form>
+        </section>
+    </article>
+
+    <#include "/patterns/make_popup.html">
+</body>
+</html>
